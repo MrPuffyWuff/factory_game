@@ -1,11 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bw238tvsgkxql"]
+[gd_scene load_steps=2 format=3 uid="uid://bw238tvsgkxql"]
 
-[ext_resource type="Script" path="res://scenes/player.gd" id="1_tsksa"]
-[ext_resource type="Texture2D" uid="uid://4resd2nkxkgr" path="res://icon.svg" id="2_883jq"]
+[ext_resource type="PackedScene" uid="uid://cctugjwadulvs" path="res://scenes/player.tscn" id="1_ogdx6"]
 
-[node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_tsksa")
+[node name="Node" type="Node"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(64, 62)
-texture = ExtResource("2_883jq")
+[node name="Player" parent="." instance=ExtResource("1_ogdx6")]
+position = Vector2(285, 141)

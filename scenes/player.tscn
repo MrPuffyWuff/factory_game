@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dyh8wcbgalpds"]
+[gd_scene load_steps=5 format=3 uid="uid://dyh8wcbgalpds"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_sfeed"]
 [ext_resource type="Texture2D" uid="uid://dd3n8i7mav515" path="res://assets/Assets/Player-Temp.png" id="2_3xgsj"]
+[ext_resource type="PackedScene" uid="uid://cs4slalkl88rf" path="res://scenes/mainGUI.tscn" id="2_fdqi7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tba1k"]
 size = Vector2(123, 120)
@@ -15,3 +16,18 @@ texture = ExtResource("2_3xgsj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -2)
 shape = SubResource("RectangleShape2D_tba1k")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="GUI" parent="Camera2D" instance=ExtResource("2_fdqi7")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 325.0
+grow_horizontal = 2
+grow_vertical = 2

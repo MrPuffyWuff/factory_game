@@ -2,8 +2,6 @@ extends CharacterBody2D
 
 @export var Velocity: Vector2 = Vector2(0, 0)
 var speed: int = 100
-var gravity: int = 100
-var jumpPower: int = 1000
 
 func _ready() -> void:
 	pass
@@ -15,8 +13,10 @@ func _physics_process(_delta):
 		velocity.x = -1 * speed
 	else:
 		velocity.x = 0
-	if Input.is_action_pressed("ui_up") and is_on_floor():
-		velocity.y = -1 * jumpPower
+	if Input.is_action_pressed("ui_up"):
+		velocity.y = -1 * speed
+	elif Input.is_action_pressed("ui_down"):
+		velocity.y = speed
 	else:
-		velocity.y += gravity
+		velocity.y = 0
 	move_and_slide()
